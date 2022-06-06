@@ -1,0 +1,53 @@
+body{
+    background: #110010;
+    color: #ffff;
+}
+.search_wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px 90px;
+}
+
+.search_employees_wrapper_Txt{
+    flex-grow: 1;
+}
+
+.search_employees_wrapper{
+    display: flex;
+    flex-grow: 1;
+}
+
+
+.addEmployeesBtn{
+
+}
+
+.search_employees_Title{
+    font-size: 2em;
+
+}
+
+.add_employees_wrapper{
+    background: #7030a0;
+    border-radius: 26px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.addEmployeesBtn{
+    margin-right: 10px;
+}
+
+.no_resultsWrapper{
+    font-size: 1em;
+    text-align: center;
+    padding: 4px;
+
+}
+
+.no_resul_paragraph1{
+    padding-bottom: 10px;
+    margin-top: -20px;
+    margin-bottom: 20px;
+}
