@@ -188,4 +188,42 @@ class clients
         }
     }
 
+    public function fetchAllClients(){
+        $return = null;
+        if ($stmt = $GLOBALS['DBSasoft']->prepare("SELECT `ClientID`, `Name`, `Surname`, `Number` FROM `clientsinfo` ")) {
+            if ($stmt->execute()) {
+                $result = $stmt->get_result();
+                while($row = $result->fetch_array(MYSQLI_ASSOC)){
+                    $return[$row['ClientID']] = $row;
+                }
+            }else{
+                echo($stmt);
+            }
+            $stmt->close();
+        } else {
+            echo($GLOBALS['DBSasoft']->error);
+        }
+
+        return $return;
+    }
+
+    public function fetchAllSkills(){
+        $return = null;
+        if ($stmt = $GLOBALS['DBSasoft']->prepare("SELECT `Skill` FROM `clientskills` ")) {
+            if ($stmt->execute()) {
+                $result = $stmt->get_result();
+                while($row = $result->fetch_array(MYSQLI_ASSOC)){
+                    $return[] = $row;
+                }
+            }else{
+                echo($stmt);
+            }
+            $stmt->close();
+        } else {
+            echo($GLOBALS['DBSasoft']->error);
+        }
+
+        return $return;
+    }
+
 }

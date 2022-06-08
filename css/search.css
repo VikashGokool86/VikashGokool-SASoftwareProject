@@ -86,3 +86,21 @@ body{
     border-radius: 6px;
     cursor: pointer;
 }
+
+.clientDisplay_wrapper{
+    display: flex;
+    background: #767070;
+    padding: 8px;
+    margin: 20px 90px;
+    border-radius: 6px;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+}
+
+.clientCount{
+    color: blue;
+    padding: 6px;
+    border-radius: 26px;
+    border: 2px solid blue;
+}
