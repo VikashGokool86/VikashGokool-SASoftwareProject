@@ -49,7 +49,7 @@ body{
 
 }
 
-.add_employees_wrapper{
+.add_employees_wrapper, .employeesFormBtnUpdate_wrapper{
     background: #7030a0;
     border-radius: 26px;
     display: flex;
@@ -57,8 +57,11 @@ body{
     padding: 10px;
     cursor: pointer;
 }
+.employeesFormBtnUpdate_wrapper{
+    width: 120px;
+}
 
-.addEmployeesBtn{
+.addEmployeesBtn, .employeesUpdateBtn, .employeesDeleteBtn{
     margin-right: 10px;
 }
 
@@ -91,11 +94,14 @@ body{
     display: flex;
     background: #767070;
     padding: 8px;
-    margin: 20px 90px;
+    margin-bottom: 7px;
     border-radius: 6px;
     justify-content: space-around;
     align-items: center;
     cursor: pointer;
+    width: 90%;
+    margin-right: 14px;
+    margin-left: 31px;
 }
 
 .clientCount{
@@ -103,4 +109,14 @@ body{
     padding: 6px;
     border-radius: 26px;
     border: 2px solid blue;
+}
+
+
+.warningWrapper{
+    display: none;
+}
+
+.clientDisplay_wrapper_wrap{
+    display: flex;
+    align-items: center;
 }

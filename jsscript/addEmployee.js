@@ -34,10 +34,4 @@ $(function () {
     });
 
 
-    $('.employeesFormBtn_wrapper').on('click', function (e) {
-        e.preventDefault();
-        $('#ClientInfoBtn').trigger('click');
-    });
-
-
 });

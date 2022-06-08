@@ -66,4 +66,15 @@
     display: none;
 }
 
+.deleteEmployeeBtn_wrapper{
+    background: black;
+    border-radius: 26px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 120px;
+}
+
 
