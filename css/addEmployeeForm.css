@@ -1,0 +1,69 @@
+#addEmployeeRes{
+    /*display: block;*/
+    position: absolute;
+    height: 99%;
+    overflow: scroll;
+    background: #242335 none repeat scroll 0% 0%;
+    bottom: 0px;
+    width: 45%;
+    border-radius: 9px;
+}
+
+.employeesFormBtn_wrapper{
+    width: 25%;
+    margin: 10px;
+
+    background: #7030a0;
+    border-radius: 26px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 80px;
+}
+
+.employeesBtn{
+    margin-right: 10px;
+}
+
+.skillBtn_wrapper{
+    width: 25%;
+    margin: 10px;
+
+    background: black;
+    color: white;
+    border-radius: 6px;
+    display: flex;
+
+    padding: 10px;
+    cursor: pointer;
+}
+.skillTxt{
+    margin-left: 4px;
+}
+.selectBtn_wrapper{
+   display: flex;
+}
+
+.removeSkillBtn{
+    margin-left: 6px;
+    cursor: pointer;
+}
+
+.gen_wrapper{
+    display: flex;
+}
+
+#ClientInfo{
+    padding: 6px;
+}
+.sub_title{
+    margin: 4px;
+    padding: 4px;
+}
+
+#ClientInfoBtn{
+    display: none;
+}
+
+

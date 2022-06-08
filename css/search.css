@@ -5,6 +5,7 @@ body{
 .search_wrapper{
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     margin: 10px 90px;
 }
 
@@ -16,10 +17,31 @@ body{
     display: flex;
     flex-grow: 1;
 }
+#text_search{
+    width: 360px;
+    background: black;
+    color: white;
+}
+.filter_wrapper{
+    margin-left: 4px;
+}
 
+.genInputField{
+    background: black;
+    color: white;
+    border-radius: 6px;
+    border-color: white;
+    padding: 8px;
+    margin-left: 4px;
+}
 
-.addEmployeesBtn{
-
+.genSelect{
+    background: black;
+    color: white;
+    border-radius: 6px;
+    border-color: white;
+    padding: 8px;
+    margin-left: 4px;
 }
 
 .search_employees_Title{
@@ -33,6 +55,7 @@ body{
     display: flex;
     align-items: center;
     padding: 10px;
+    cursor: pointer;
 }
 
 .addEmployeesBtn{
@@ -50,4 +73,16 @@ body{
     padding-bottom: 10px;
     margin-top: -20px;
     margin-bottom: 20px;
+}
+
+#addEmployeeRes_wrapper{
+    display: none;
+}
+.searchSkillBtn{
+    border-radius: 8px;
+    margin-left: 10px;
+    padding: 6px;
+    border: 2px solid white;
+    border-radius: 6px;
+    cursor: pointer;
 }
