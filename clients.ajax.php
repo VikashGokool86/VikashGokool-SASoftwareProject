@@ -23,3 +23,8 @@ if(isset($_GET['searchClient']) && isset($_GET['searchTerm']) && isset($_GET['fi
     $response = $clients->searchClientInfo($_GET['searchTerm'], $_GET['filter']);
     echo json_encode($response);
 }
+
+// updates a client into the DB
+if(isset($_GET['deleteClientInfo']) && isset($_GET['clientID']) && $_GET['deleteClientInfo'] && $_GET['clientID'] && isset($_GET['hk']) && password_verify('deleteClientInfo', $_GET['hk'])){
+    echo $clients->deleteClientInfo($_GET['clientID']);
+}

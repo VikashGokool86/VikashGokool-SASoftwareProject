@@ -127,7 +127,13 @@ class clients
                     <div class="employeesTxt">Delete Employee</div>
                 </div>
             <?php } ?>
-
+            <div class="deleteDialogRes">
+                <div class="deleteQuestion">Are You Sure you want to delete this employee?</div>
+                <div class="deleteBtn_wrapper">
+                    <div class="confirmDeleteYes">Yes</div>
+                    <div class="cancelDelete">No</div>
+                </div>
+            </div>
             <input id="ClientInfoBtn" name="ClientInfo[save]" type="submit" >
             <div class="formRes">
         </form>
@@ -275,6 +281,62 @@ class clients
                     });
                     return updateClientInfoRequest;
                 }
+
+
+                $('.deleteEmployeeBtn_wrapper').on('click', function (e) {
+                    e.preventDefault();
+                    $('.deleteDialogRes').toggle();
+                    $('.deleteDialogRes').scrollIntoView();
+                });
+
+
+                $('.cancelDelete').on('click', function (e) {
+                    e.preventDefault();
+                    $('.deleteDialogRes').hide();
+
+                });
+
+                $('.confirmDeleteYes').on('click', function (e) {
+                    e.preventDefault();
+                    deleteClientInfoRequestCheck($('#clientID').val());
+                });
+
+
+                var deleteClientInfoRequest = false;
+
+                function deleteClientInfoRequestCheck(clientID){
+                    if(deleteClientInfoRequest && deleteClientInfoRequest.readyState !== 4){
+                        deleteClientInfoRequest.abort();
+                    }
+                    deleteClientInfoRequest = deleteClientInfoRequestRun(clientID);
+                }
+
+                function deleteClientInfoRequestRun(clientID){
+                    var elemRes =  $('.formRes ').html('');
+                    var deleteClientInfoRequest = $.ajax({
+                        cache: false,
+                        url: 'clients.ajax.php?deleteClientInfo=1&clientID='+clientID+'&hk=<?php echo password_hash('deleteClientInfo', PASSWORD_DEFAULT); ?>',
+                        dataType: 'text',
+                        type: 'post',
+                        contentType: 'application/x-www-form-urlencoded',
+                        beforeSend: function(){
+                            elemRes.html('<div style="margin: 4px; background: red;border-radius: 6px; padding: 6px;">deleting...</div>');
+                        },
+                        error: function(){
+                            elemRes.html('<div style="margin: 4px; background: red;border-radius: 6px; padding: 6px;">Failed to delete.</div>');
+                        },
+                        success: function(data){
+                            if( data){
+                                elemRes.html('<div style="margin: 4px; background: red;border-radius: 6px; padding: 6px;">Successfully deleted. Page reloading</div>');
+                                window.location.reload();
+                            }else{
+                                elemRes.html('<div style="margin: 4px; background: red;border-radius: 6px; padding: 6px;">Could not delete. '+data+'</div>');
+                            }
+                        }
+                    });
+                    return deleteClientInfoRequest;
+                }
+
 
 
             });
@@ -580,6 +642,20 @@ class clients
 
 
         return $response;
+    }
+
+    /**
+     * deletes a employee along with their skills
+     * @param $clientID
+     * @return bool
+     */
+    public function deleteClientInfo($clientID): bool{
+        $return = false;
+        $return = $this->deleteClient($clientID);
+        if($return){
+            $return = $this->deleteClientSkill($clientID);
+        }
+        return $return;
     }
 
 }

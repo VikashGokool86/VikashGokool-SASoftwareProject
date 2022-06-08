@@ -77,4 +77,13 @@
     width: 120px;
 }
 
+.deleteDialogRes{
+    display: none;
+}
+
+.deleteBtn_wrapper{
+    ddisplay: flex;
+    justify-content: space-evenly;
+    padding: 9px;
+}
 

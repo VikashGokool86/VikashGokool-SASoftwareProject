@@ -78,11 +78,6 @@ $allSkills = $clients->fetchAllSkillsForDropDown();
 <script>
     $(function () {
 
-        $('.deleteEmployeeBtn').on('click', function (e) {
-            e.preventDefault();
-            $(this).closest('.warningWrapper').toggle();
-        });
-
         $('.add_employees_wrapper').on('click', function (e) {
             e.preventDefault();
             $('#addEmployeeRes_wrapper').toggle();
