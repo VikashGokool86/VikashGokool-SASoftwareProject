@@ -1,7 +1,6 @@
 <?php
 session_start();
 include_once('classes/clients.php');
-var_dump($_SESSION);
 ?>
 <!DOCTYPE html>
 <html lang="en">
